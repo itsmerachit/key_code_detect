@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Virtual Keyboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<!--    For Dark Mode-->
+<!--    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/darkly/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .key_ctr {
+            max-width: 80px;
+            max-height: 72px;
+            width: auto;
+            height: 800px !important;
+            background-color: #e7e7e7;
+            border-radius: 10px;
+            border: 1px solid black;
+            padding: 0px !important;
+            box-shadow: 0 5px #999;
+        }
+
+        .key_ctr:hover {
+            background-color: #9b9b9b;
+        }
+
+        .key_ctr:active {
+            background-color: #9b9b9b;
+            box-shadow: 0 1px #666;
+            transform: translateY(5px);
+        }
+
+        .row {
+            margin: 10px 0px;
+        }
+
+        .col {
+            margin: 0px 5px;
+        }
+
+        .keys {
+            display: table;
+            margin: 0 auto;
+        }
+
+        #spc {
+            /*width: 500px !important;*/
+            max-width: 500px !important;
+        }
+
+        #sft {
+            /*width: 200px !important;*/
+            max-width: 200px !important;
+        }
+
+        #cmd {
+            max-width: 100px !important;
+            /*width: 100px;*/
+        }
+
+        #cps {
+            max-width: 140px !important;
+        }
+
+        #ret {
+            max-width: 140px !important;
+        }
+
+        .card {
+            max-width: 500px;
+        }
+        #card1{
+            margin-top: 30px;
+        }
+
+        #keyboard {
+            margin-top: 50px;
+        }
+
+        .light {
+            background-color: #f8f9fa;
+            color: rgba(0,0,0,1);
+        }
+        .light-keys {
+            background-color: #e7e7e7;
+            color: rgba(0,0,0,1);
+        }
+        .dark {
+            background-color: #343a40;
+            color: rgba(255,255,255,.5);
+        }
+        full_dark {
+            background-color: #25282b;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+        <a class="navbar-brand" href="#">Key Code Detector</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Theme
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <span class="dropdown-item">Light</span>
+                        <span class="dropdown-item">Dark</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="maindiv">
+        <div id="card1">
+            <div class="card" style="margin: auto">
+                <div class="card-header">
+                    <span class="keys">
+                        Key Codes
+                    </span>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <span class="keys" id="msg">
+                            (Press any key to get the key code.)
+                        </span>
+                        <span id="keycode" class="keys" style="font-size: 22px">
+                            &nbsp;
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="" id="keyboard">
+            <div class="row justify-content-center r1">
+                <div class="col key_ctr"><span class="keys" id="49">1</span></div>
+                <div class="col key_ctr"><span class="keys" id="50">2</span></div>
+                <div class="col key_ctr"><span class="keys" id="51">3</span></div>
+                <div class="col key_ctr"><span class="keys" id="52">4</span></div>
+                <div class="col key_ctr"><span class="keys" id="53">5</span></div>
+                <div class="col key_ctr"><span class="keys" id="54">6</span></div>
+                <div class="col key_ctr"><span class="keys" id="55">7</span></div>
+                <div class="col key_ctr"><span class="keys" id="56">8</span></div>
+                <div class="col key_ctr"><span class="keys" id="57">9</span></div>
+                <div class="col key_ctr"><span class="keys" id="48">0</span></div>
+                <div class="col key_ctr"><span class="keys" id="8">delete</span></div>
+            </div>
+            <div class="row justify-content-center r2">
+                <div class="col key_ctr"><span class="keys" id="81">Q</span></div>
+                <div class="col key_ctr"><span class="keys" id="87">W</span></div>
+                <div class="col key_ctr"><span class="keys" id="69">E</span></div>
+                <div class="col key_ctr"><span class="keys" id="82">R</span></div>
+                <div class="col key_ctr"><span class="keys" id="84">T</span></div>
+                <div class="col key_ctr"><span class="keys" id="89">Y</span></div>
+                <div class="col key_ctr"><span class="keys" id="85">U</span></div>
+                <div class="col key_ctr"><span class="keys" id="73">I</span></div>
+                <div class="col key_ctr"><span class="keys" id="79">O</span></div>
+                <div class="col key_ctr"><span class="keys" id="80">P</span></div>
+            </div>
+            <div class="row justify-content-center r3">
+                <div class="col key_ctr" id="cps"><span class="keys" id="20">caps lock</span></div>
+                <div class="col key_ctr"><span class="keys" id="65">A</span></div>
+                <div class="col key_ctr"><span class="keys" id="83">S</span></div>
+                <div class="col key_ctr"><span class="keys" id="68">D</span></div>
+                <div class="col key_ctr"><span class="keys" id="70"><u>F</u></span></div>
+                <div class="col key_ctr"><span class="keys" id="71">G</span></div>
+                <div class="col key_ctr"><span class="keys" id="72">H</span></div>
+                <div class="col key_ctr"><span class="keys" id="74"><u>J</u></span></div>
+                <div class="col key_ctr"><span class="keys" id="75">K</span></div>
+                <div class="col key_ctr"><span class="keys" id="76">L</span></div>
+                <div class="col key_ctr"><span class="keys" id="186">;</span></div>
+                <div class="col key_ctr"><span class="keys" id="222">'</span></div>
+                <div class="col key_ctr" id="ret"><span class="keys" id="13">return</span></div>
+            </div>
+            <div class="row justify-content-center r4">
+                <div class="col key_ctr" id="sft"><span class="keys" id="16">shift</span></div>
+                <div class="col key_ctr"><span class="keys" id="90">Z</span></div>
+                <div class="col key_ctr"><span class="keys" id="88">X</span></div>
+                <div class="col key_ctr"><span class="keys" id="67">C</span></div>
+                <div class="col key_ctr"><span class="keys" id="86">V</span></div>
+                <div class="col key_ctr"><span class="keys" id="66">B</span></div>
+                <div class="col key_ctr"><span class="keys" id="78">N</span></div>
+                <div class="col key_ctr"><span class="keys" id="77">M</span></div>
+                <div class="col key_ctr"><span class="keys" id="188">,</span></div>
+                <div class="col key_ctr"><span class="keys" id="190">.</span></div>
+                <div class="col key_ctr"><span class="keys" id="191">/</span></div>
+                <div class="col key_ctr" id="sft"><span class="keys" id="16">shift</span></div>
+            </div>
+            <div class="row justify-content-center r5">
+                <div class="col col key_ctr" id="fn"><span class="keys" id="fn">fn</span></div>
+                <div class="col col key_ctr" id="ctl"><span class="keys" id="17">control</span></div>
+                <div class="col col key_ctr" id="opt"><span class="keys" id="18">option</span></div>
+                <div class="col col key_ctr" id="cmd"><span class="keys" id="91">command</span></div>
+                <div class="col col key_ctr" id="spc"><span class="keys" id="32">spacebar</span></div>
+                <div class="col col key_ctr" id="cmd"><span class="keys" id="91">command</span></div>
+                <div class="col col key_ctr" id="ctl"><span class="keys" id="17">control</span></div>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script>
+
+    var dark_bg = "#343a40"
+    var dark_bg_font = "rgba(255,255,255,.5)"
+
+    var light_bg = "#f8f9fa"
+    var light_bg_font = "rgba(0,0,0)"
+    var dark_bg_content = "#343a40"
+    var liught_bg_content = "#fff"
+
+    $(".key_ctr").click(function (event) {
+        $("#msg").text("Key Code is")
+        var key_code = $($(event.target).children())[0].id;
+        $("#keycode").text(key_code)
+    });
+    $(".dropdown-item").click(function (event) {
+        var theme = event.target.innerText.toLowerCase();
+        var navbar = $("#navbar");
+
+        if (theme === 'light') {
+            $("html").css({"background-color":"#ffffff"});
+            $("main").css({"background-color":"#ffffff"});
+
+            if (navbar.hasClass("navbar-light")) {
+
+            } else {
+                navbar.removeClass("navbar-dark")
+                navbar.addClass("navbar-light")
+            }
+
+            if (navbar.hasClass("bg-light")) {
+
+            } else {
+                navbar.removeClass("bg-dark")
+                navbar.addClass("bg-light")
+            }
+
+            if ($(".card-header").hasClass('dark')) {
+                $(".card-header").removeClass('dark');
+            }
+            $(".card-header").addClass('light');
+
+            if ($(".card-body").hasClass('dark')) {
+                $(".card-body").removeClass('dark');
+            }
+            $(".card-body").addClass('light');
+
+            if ($(".key_ctr").hasClass('dark')) {
+                $(".key_ctr").removeClass('dark');
+            }
+            $(".key_ctr").addClass('light-keys')
+
+        } else {
+            $("html").css({"background-color":"#25282b"});
+            $("main").css({"background-color":"#25282b"});
+
+            if (navbar.hasClass("navbar-light")) {
+                navbar.removeClass("navbar-light")
+                navbar.addClass("navbar-dark")
+            } else {
+
+            }
+            if (navbar.hasClass("bg-light")) {
+                navbar.removeClass("bg-light")
+                navbar.addClass("bg-dark")
+            } else {
+
+            }
+
+            if ($(".card-header").hasClass('light')) {
+                $(".card-header").removeClass('light');
+            }
+            $(".card-header").addClass('dark');
+
+            if ($(".card-body").hasClass('light')) {
+                $(".card-body").removeClass('light');
+            }
+            $(".card-body").addClass('dark');
+
+            if ($(".key_ctr").hasClass('light-keys')) {
+                $(".key_ctr").removeClass('light-keys');
+            }
+            $(".key_ctr").addClass('dark');
+        }
+    })
+</script>
+</body>
+</html>
